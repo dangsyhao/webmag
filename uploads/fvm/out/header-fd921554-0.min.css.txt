@@ -1,0 +1,4 @@
+PROCESSED on Thu, 06 Dec 2018 11:56:42 +0000
+/wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: [contact-form-7] Fetched url at http://webmag.me/wp-content/plugins/contact-form-7/includes/css/styles.css 
+/wp-content/plugins/cookie-notice/css/front.min.css --- Debug: [cookie-notice-front] Fetched url at http://webmag.me/wp-content/plugins/cookie-notice/css/front.min.css 
+PROCESSED from http://webmag.me/
