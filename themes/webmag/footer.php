@@ -5,43 +5,57 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="footer-widget">
-                        <div class="footer-logo">
-                            <a href="index.html" class="logo"><img src="<?= ASSETS_PATH?>img/logo.png" alt=""></a>
-                        </div>
-                        <ul class="footer-nav">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Advertisement</a></li>
-                        </ul>
-                        <div class="footer-copyright">
-                                    <span>© <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright ©<script>document.write(new Date().getFullYear());</script>2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-                        </div>
+                        <?php $info=get_field(WEBMAG_LOGO,'option');?>
+                        <?php if($info):?>
+                    <div class="footer-logo">
+                        <a href="<?= get_bloginfo('url');?>" class="logo"><img src="<?= $info['url']?>" alt=""></a>
                     </div>
+                        <?php endif;?>
+
+                    <?php $info=get_field(WEBMAG_INFOMATION,'option');?>
+                    <?php if($info):?>
+                        <ul class="footer-nav">
+                            <li><a href="<?= $info['privacy_policy']?>">Privacy Policy</a></li>
+                            <li><a href="<?= $info['advertisement']?>">Advertisement</a></li>
+                        </ul>
+
+                        <div class="footer-copyright">
+                            <span><?= $info['copyright']?></span>
+                        </div>
+                    <?php endif;?>
+
+                        </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-6">
+                            <?php $rows=get_field(WEBMAG_ABOUT_US,'option');?>
+                            <?php if($rows):?>
                             <div class="footer-widget">
                                 <h3 class="footer-title">About Us</h3>
                                 <ul class="footer-links">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">Join Us</a></li>
-                                    <li><a href="contact.html">Contacts</a></li>
+                                <?php foreach($rows as $row):?>
+                                    <li><a href="<?= $row['about_link']?>"><?= $row['about_label']?></a></li>
+                                <?php endforeach;?>
                                 </ul>
                             </div>
+                            <?php endif;?>
+
                         </div>
+
                         <div class="col-md-6">
+                            <?php $rows=get_field(WEBMAG_CATAGORIES,'option');?>
+                            <?php if($rows):?>
                             <div class="footer-widget">
                                 <h3 class="footer-title">Catagories</h3>
                                 <ul class="footer-links">
-                                    <li><a href="category.html">Web Design</a></li>
-                                    <li><a href="category.html">JavaScript</a></li>
-                                    <li><a href="category.html">Css</a></li>
-                                    <li><a href="category.html">Jquery</a></li>
+                                <?php foreach($rows as $row):?>
+                                    <li><a href="<?= $row['category_link']?>"><?= $row['category_label']?></a></li>
+                                <?php endforeach;?>
                                 </ul>
                             </div>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
@@ -55,12 +69,16 @@
                                 <button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
                             </form>
                         </div>
-                        <ul class="footer-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
+
+                    <?php
+                        wp_nav_menu( array(
+                        'theme_location' => 'social-aside',
+                        'container'      =>'<ul>',
+                        'menu_class'    => 'footer-social',
+                        'walker'         =>  new custom_social_menu()
+                        ));
+                    ?>
+
                     </div>
                 </div>
 
@@ -69,6 +87,9 @@
         </div>
         <!-- /container -->
     </footer>
+    <!-- jQuery Plugins -->
+
+<!--    <script src="--><?//=ASSETS_PATH?><!--js/main.js"></script>-->
 
     </body>
 </html>

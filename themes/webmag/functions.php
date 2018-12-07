@@ -22,19 +22,20 @@ function webmag_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+    add_image_size( 'webmag-logo-image', 114, 18, true );
 
-	add_image_size( 'webmag-featured-image', 2000, 1200, true );
 
 
-	// This theme uses wp_nav_menu() in two locations.
+    // This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'    => __( 'Top Menu', 'webmag' ),
-		'social' => __( 'Social Links Menu', 'webmag' ),
-	) );
+		'top'    => __( 'Top Menu', DOMAIN ),
+		'social-aside' => __( 'Social Aside Menu',DOMAIN),
+        'social-footer' => __( 'Social Footer Menu',DOMAIN),
+        'aside'    => __( 'Aside Menu',DOMAIN),
+
+    ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -101,16 +102,18 @@ add_filter( 'excerpt_more', 'webmag_excerpt_more' );
  * Enqueue scripts and styles.
  */
 function webmag_scripts() {
+
+    // Add custom JS.
+    wp_enqueue_script('webmag-script-jquery',ASSETS_PATH.'js/jquery.min.js',array(),null);
+    wp_enqueue_script('webmag-script-bootstrap',ASSETS_PATH.'js/bootstrap.min.js',array(),null);
+    wp_enqueue_script('webmag-script-main', ASSETS_PATH.'js/main.js',array(),null);
+
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style('webmag-fonts',ASSETS_PATH.'css/font-awesome.min.css',array(),null );
-
 	// Theme stylesheet.
 	wp_enqueue_style('webmag-style-bootstrap',ASSETS_PATH.'css/bootstrap.min.css');
     wp_enqueue_style('webmag-style-style',ASSETS_PATH.'css/style.css');
-    // Add custom JS.
-    wp_enqueue_script('webmag-script-jquery',ASSETS_PATH.'js/jquery.min.js',array(),null);
-    wp_enqueue_script('webmag-script-main', ASSETS_PATH.'js/main.js',array(),null);
-    wp_enqueue_script('webmag-script-bootstrap',ASSETS_PATH.'js/bootstrap.min.js',array(),null);
+
 
 }
 add_action( 'wp_enqueue_scripts','webmag_scripts');
@@ -123,7 +126,7 @@ require get_parent_theme_file_path( '/inc/define.php' );
 /**
  * Implement the Custom Header feature.
  */
-require get_parent_theme_file_path( '/inc/custom-header.php' );
+require get_parent_theme_file_path( '/inc/acf.php' );
 
 
 /**
@@ -131,6 +134,11 @@ require get_parent_theme_file_path( '/inc/custom-header.php' );
  */
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 
+/**
+ * Additional features to allow styling of the templates.
+ */
+require get_parent_theme_file_path( '/inc/custom_top_menu.php' );
+require get_parent_theme_file_path( '/inc/custom_social_menu.php' );
 
 
 

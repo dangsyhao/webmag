@@ -14,11 +14,8 @@
     <?php wp_head();?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -31,7 +28,10 @@
             <div class="container">
                 <!-- logo -->
                 <div class="nav-logo">
-                    <a href="index.html" class="logo"><img src="<?= ASSETS_PATH?>img/logo.png" alt=""></a>
+                    <?php $logo_url=get_field(WEBMAG_LOGO,'option');?>
+                    <?php if($logo_url):?>
+                    <a href="<?= get_bloginfo('url')?>" class="logo"><img src="<?= $logo_url['url'] ?>" alt=""></a>
+                    <?php endif;?>
                 </div>
                 <!-- /logo -->
 
@@ -44,8 +44,7 @@
                     <button class="aside-btn"><i class="fa fa-bars"></i></button>
                     <button class="search-btn"><i class="fa fa-search"></i></button>
                     <div class="search-form">
-                        <input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
-                        <button class="search-close"><i class="fa fa-times"></i></button>
+                        <?php get_search_form();?>
                     </div>
                 </div>
                 <!-- /search & aside toggle -->

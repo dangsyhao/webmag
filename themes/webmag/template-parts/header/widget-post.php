@@ -1,35 +1,14 @@
 <div id="nav-aside">
     <!-- nav -->
-    <div class="section-row">
-        <ul class="nav-aside-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="#">Join Us</a></li>
-            <li><a href="#">Advertisement</a></li>
-            <li><a href="contact.html">Contacts</a></li>
-        </ul>
-    </div>
+        <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'aside',
+                'menu_class'        => 'nav-aside-menu',
+                'container_class'   =>'section-row'
+                ));
+        ?>
+
     <!-- /nav -->
-
-    <!-- Beadcrumb -->
-    <?php if(!is_front_page() && !is_single()):?>
-
-        <div class="page-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <ul class="page-header-breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Contact</li>
-                        </ul>
-                        <h1>Contact</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endif;?>
-    <!-- /Beadcrumb -->
-
 
     <!-- widget posts -->
     <div class="section-row">
@@ -60,12 +39,18 @@
     <!-- social links -->
     <div class="section-row">
         <h3>Follow us</h3>
-        <ul class="nav-aside-social">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-        </ul>
+
+        <?php
+            wp_nav_menu( array(
+                    'theme_location' => 'social-aside',
+                    'container'      =>'<ul>',
+                    'menu_class'    => 'nav-aside-social',
+                    'walker'         =>  new custom_social_menu()
+            ));
+        ?>
+
+
+
     </div>
     <!-- /social links -->
 
