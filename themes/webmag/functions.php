@@ -24,17 +24,21 @@ function webmag_setup() {
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
 	add_theme_support( 'post-thumbnails' );
-    add_image_size( 'webmag-logo-image', 114, 18, true );
+	set_post_thumbnail_size( 360, 216, true ); // default Featured Image dimensions (cropped)
+	add_image_size( 'webmag-logo-image', 114, 18, true );
+	add_image_size( 'webmag-featured-top-post-image', 114, 18, true );
+	add_image_size( 'webmag-thumb-post-image', 750, 450, true );
+	add_image_size( 'webmag-mostread-bottom-post-image', 300, 180, true );
+	add_image_size( 'webmag-mostread-aside-post-image', 90, 90, true );
 
 
 
     // This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'    => __( 'Top Menu', DOMAIN ),
-		'social-aside' => __( 'Social Aside Menu',DOMAIN),
+		'top'    		=> __( 'Top Menu', DOMAIN ),
+		'social-aside' 	=> __( 'Social Aside Menu',DOMAIN),
         'social-footer' => __( 'Social Footer Menu',DOMAIN),
-        'aside'    => __( 'Aside Menu',DOMAIN),
-
+        'aside'    		=> __( 'Aside Menu',DOMAIN),
     ) );
 
 	/*
@@ -74,31 +78,6 @@ add_action( 'after_setup_theme', 'webmag_setup' );
 
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param string $link Link to single post/page.
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-function webmag_excerpt_more( $link ) {
-	if ( is_admin() ) {
-		return $link;
-	}
-
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'webmag' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
-}
-add_filter( 'excerpt_more', 'webmag_excerpt_more' );
-
-
-
-/**
  * Enqueue scripts and styles.
  */
 function webmag_scripts() {
@@ -132,7 +111,7 @@ require get_parent_theme_file_path( '/inc/acf.php' );
 /**
  * Additional features to allow styling of the templates.
  */
-require get_parent_theme_file_path( '/inc/template-functions.php' );
+require get_parent_theme_file_path( '/inc/webmag-functions.php' );
 
 /**
  * Additional features to allow styling of the templates.

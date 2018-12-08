@@ -4,69 +4,42 @@
             <h2>Most Read</h2>
         </div>
     </div>
+
+<?php
+    $args = array(
+        'post_type'         => 'post',
+        'posts_per_page'    =>  4,
+        'paged'             =>  1,
+        'meta_key'        	=> 'webmag_post_views_count',
+        'orderby'         	=> 'meta_value',
+        'order'             => 'DESC',
+        'post_status'       => 'publish',
+        'suppress_filters'  => true
+    );
+    $the_query=new WP_Query($args);
+
+?>
     <!-- post -->
+<?php while($the_query->have_posts()):$the_query->the_post();?>
     <div class="col-md-12">
         <div class="post post-row">
-            <a class="post-img" href="blog-post.html"><img src="<?= ASSETS_PATH ?>img/post-4.jpg" alt=""></a>
+            <a class="post-img" href="<?php the_permalink();?>"><img src="<?= get_the_post_thumbnail_url($post->ID,'webmag-mostread-bottom-post-image')?>" alt=""></a>
             <div class="post-body">
                 <div class="post-meta">
-                    <a class="post-category cat-2" href="category.html">JavaScript</a>
-                    <span class="post-date">March 27, 2018</span>
+                <?php $cate_obj=get_the_category($post->ID);?>
+                    <a class="post-category cat-2" href="<?= get_category_link($cate_obj[0]->cat_ID)?>"><?= get_cat_name($cate_obj[0]->cat_ID)?></a>
+                    <span class="post-date"><?= get_the_date()?></span>
                 </div>
-                <h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                <p><?php the_excerpt();?></p>
             </div>
         </div>
     </div>
+<?php endwhile;?>
+<?php wp_reset_query();?>
+
     <!-- /post -->
 
-    <!-- post -->
-    <div class="col-md-12">
-        <div class="post post-row">
-            <a class="post-img" href="blog-post.html"><img src="<?= ASSETS_PATH ?>img/post-6.jpg" alt=""></a>
-            <div class="post-body">
-                <div class="post-meta">
-                    <a class="post-category cat-2" href="category.html">JavaScript</a>
-                    <span class="post-date">March 27, 2018</span>
-                </div>
-                <h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-            </div>
-        </div>
-    </div>
-    <!-- /post -->
-
-    <!-- post -->
-    <div class="col-md-12">
-        <div class="post post-row">
-            <a class="post-img" href="blog-post.html"><img src="<?= ASSETS_PATH ?>img/post-1.jpg" alt=""></a>
-            <div class="post-body">
-                <div class="post-meta">
-                    <a class="post-category cat-4" href="category.html">Css</a>
-                    <span class="post-date">March 27, 2018</span>
-                </div>
-                <h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-            </div>
-        </div>
-    </div>
-    <!-- /post -->
-
-    <!-- post -->
-    <div class="col-md-12">
-        <div class="post post-row">
-            <a class="post-img" href="blog-post.html"><img src="<?= ASSETS_PATH ?>img/post-2.jpg" alt=""></a>
-            <div class="post-body">
-                <div class="post-meta">
-                    <a class="post-category cat-3" href="category.html">Jquery</a>
-                    <span class="post-date">March 27, 2018</span>
-                </div>
-                <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-            </div>
-        </div>
-    </div>
-    <!-- /post -->
 
     <div class="col-md-12">
         <div class="section-row">
