@@ -30,7 +30,8 @@ function webmag_setup() {
 	add_image_size( 'webmag-thumb-post-image', 750, 450, true );
 	add_image_size( 'webmag-mostread-bottom-post-image', 300, 180, true );
 	add_image_size( 'webmag-mostread-aside-post-image', 90, 90, true );
-
+    add_image_size( 'webmag-adv-aside-300-250-image', 300, 250, true );
+    add_image_size( 'webmag-adv-single-300-250-image', 728, 90, true );
 
 
     // This theme uses wp_nav_menu() in two locations.
@@ -117,7 +118,9 @@ require get_parent_theme_file_path( '/inc/webmag-functions.php' );
  * Additional features to allow styling of the templates.
  */
 require get_parent_theme_file_path( '/inc/custom_top_menu.php' );
+
 require get_parent_theme_file_path( '/inc/custom_social_menu.php' );
+
 
 
 
