@@ -1,5 +1,0 @@
-PROCESSED on Thu, 06 Dec 2018 04:14:51 +0000
-/wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: [contact-form-7] Fetched url at http://webmag.me/wp-content/plugins/contact-form-7/includes/css/styles.css 
-/wp-content/plugins/cookie-notice/css/front.min.css --- Debug: [cookie-notice-front] Fetched url at http://webmag.me/wp-content/plugins/cookie-notice/css/front.min.css 
-/wp-content/themes/webmag/style.css --- Debug: [twentyseventeen-style] Fetched url at http://webmag.me/wp-content/themes/webmag/style.css 
-PROCESSED from http://webmag.me/wp-content/themes/webmag/assets/js/skip-link-focus-fix.js

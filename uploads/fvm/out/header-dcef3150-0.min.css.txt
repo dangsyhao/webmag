@@ -1,4 +1,4 @@
-PROCESSED on Fri, 07 Dec 2018 03:13:20 +0000
+PROCESSED on Tue, 11 Dec 2018 15:58:43 +0000
 /wp-includes/css/dashicons.min.css --- Debug: [dashicons] Fetched url at http://webmag.me/wp-includes/css/dashicons.min.css 
 /wp-includes/css/admin-bar.min.css --- Debug: [admin-bar] Fetched url at http://webmag.me/wp-includes/css/admin-bar.min.css 
 /wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: [contact-form-7] Fetched url at http://webmag.me/wp-content/plugins/contact-form-7/includes/css/styles.css 

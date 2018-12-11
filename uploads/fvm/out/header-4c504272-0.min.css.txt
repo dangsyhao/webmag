@@ -1,7 +1,0 @@
-PROCESSED on Thu, 06 Dec 2018 07:21:25 +0000
-/wp-content/plugins/contact-form-7/includes/css/styles.css --- Debug: [contact-form-7] Fetched url at http://webmag.me/wp-content/plugins/contact-form-7/includes/css/styles.css 
-/wp-content/plugins/cookie-notice/css/front.min.css --- Debug: [cookie-notice-front] Fetched url at http://webmag.me/wp-content/plugins/cookie-notice/css/front.min.css 
-/wp-content/themes/webmag/assets/css/font-awesome.min.css --- Debug: [webmag-fonts] Fetched url at http://webmag.me/wp-content/themes/webmag/assets/css/font-awesome.min.css 
-/wp-content/themes/webmag/assets/css/bootstrap.min.css --- Debug: [webmag-style-bootstrap] Fetched url at http://webmag.me/wp-content/themes/webmag/assets/css/bootstrap.min.css 
-/wp-content/themes/webmag/assets/css/style.css --- Debug: [webmag-style-style] Fetched url at http://webmag.me/wp-content/themes/webmag/assets/css/style.css 
-PROCESSED from http://webmag.me/
