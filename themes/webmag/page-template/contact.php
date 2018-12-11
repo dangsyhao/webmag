@@ -27,13 +27,13 @@ get_header()
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <span>Email</span>
-                                        <input class="input" type="email" name="email">
+                                        <input class="input" type="email" name="email" value="<?= isset($_GET['newsletter'])?$_GET['newsletter']:false?>">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <span>Subject</span>
-                                        <input class="input" type="text" name="subject">
+                                        <input class="input" type="text" name="subject" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">

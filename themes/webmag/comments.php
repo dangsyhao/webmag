@@ -62,7 +62,8 @@ if ( post_password_required() ) {
 			?>
 		</ol>
 
-		<?php the_comments_pagination( array(
+		<?php
+        the_comments_pagination( array(
 			'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
 			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
 		) );

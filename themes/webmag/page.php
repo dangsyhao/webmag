@@ -5,10 +5,10 @@
         <div class="container">
             <!-- row -->
             <div class="row">
-
-                <?php get_template_part('template-parts/page/page/left-section')?>
+            <?php if(have_posts()):?>
+                <?php get_template_part('template-parts/page/page/page-default')?>
                 <?php get_template_part('template-parts/right-widget/right-widget')?>
-
+            <?php endif;?>
 
             </div>
             <!-- /row -->

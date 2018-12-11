@@ -26,3 +26,6 @@ define('ADV_ASIDE_MOST_READ','adv_aside_most_read');
 
 // Define DOMAIN
 define('ADV_SINGLE_POST','adv_single_post');
+
+// Define DOMAIN
+define('WEBMAG_POST_BANER','webmag_post_baner');

@@ -32,6 +32,9 @@ function webmag_setup() {
 	add_image_size( 'webmag-mostread-aside-post-image', 90, 90, true );
     add_image_size( 'webmag-adv-aside-300-250-image', 300, 250, true );
     add_image_size( 'webmag-adv-single-300-250-image', 728, 90, true );
+    add_image_size( 'webmag-post-banner-image', 1903, 269, true );
+
+
 
 
     // This theme uses wp_nav_menu() in two locations.
@@ -86,7 +89,7 @@ function webmag_scripts() {
     // Add custom JS.
     wp_enqueue_script('webmag-script-jquery',ASSETS_PATH.'js/jquery.min.js',array(),null);
     wp_enqueue_script('webmag-script-bootstrap',ASSETS_PATH.'js/bootstrap.min.js',array(),null);
-    wp_enqueue_script('webmag-script-main', ASSETS_PATH.'js/main.js',array(),null);
+    //wp_enqueue_script('webmag-script-main', ASSETS_PATH.'js/main.js',array(),null);
 
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style('webmag-fonts',ASSETS_PATH.'css/font-awesome.min.css',array(),null );

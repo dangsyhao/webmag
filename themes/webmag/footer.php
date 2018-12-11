@@ -46,18 +46,19 @@
                         </div>
 
                         <div class="col-md-6">
-                            <?php $rows=get_field(WEBMAG_CATAGORIES,'option');?>
-                            <?php if($rows):?>
+                            <?php $cat_objs=get_categories();?>
+                            <?php if(isset($cat_objs)):?>
                             <div class="footer-widget">
                                 <h3 class="footer-title">Catagories</h3>
                                 <ul class="footer-links">
-                                <?php foreach($rows as $row):?>
-                                    <li><a href="<?= $row['category_link']?>"><?= $row['category_label']?></a></li>
+                                <?php foreach($cat_objs as $cat_obj):?>
+                                    <li><a href="<?= get_category_link($cat_obj->cat_ID) ?>"><?= $cat_obj->cat_name;?></a></li>
                                 <?php endforeach;?>
                                 </ul>
                             </div>
                             <?php endif;?>
                         </div>
+
                     </div>
                 </div>
 
@@ -65,7 +66,7 @@
                     <div class="footer-widget">
                         <h3 class="footer-title">Join our Newsletter</h3>
                         <div class="footer-newsletter">
-                            <form>
+                            <form method="get" action="http://webmag.me/contact/">
                                 <input class="input" type="email" name="newsletter" placeholder="Enter your email">
                                 <button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
                             </form>
@@ -88,9 +89,9 @@
         </div>
         <!-- /container -->
     </footer>
-    <!-- jQuery Plugins -->
 
-<!--    <script src="--><?//=ASSETS_PATH?><!--js/main.js"></script>-->
+    <!-- jQuery Plugins -->
+    <script src="<?=ASSETS_PATH?>js/main.js"></script>
 
     </body>
 </html>
