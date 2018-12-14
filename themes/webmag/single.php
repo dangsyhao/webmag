@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
     <div class="section">
         <!-- container -->
         <div class="container">

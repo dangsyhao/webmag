@@ -12,8 +12,8 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => __('Blocks', DOMAIN),
-        'menu_title'    => __('Blocks', DOMAIN),
+        'page_title'    => __('Blocks', WEBMAG),
+        'menu_title'    => __('Blocks', WEBMAG),
         'parent_slug'   => 'athena-theme-settings',
     ));
 

@@ -28,7 +28,7 @@
                     <div class="col-md-12">
                         <div class="post post-row">
                             <div class="post-body">
-                                <h4 class="post-title">No results were found ... !</h4>
+                                <h4 class="post-title"><?php _e('No results were found ... !',WEBMAG);?></h4>
                             </div>
                         </div>
                     </div>

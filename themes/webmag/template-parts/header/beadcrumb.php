@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-10">
                 <ul class="page-header-breadcrumb">
-                    <li><a href="<?= get_bloginfo('url');?>">Home</a></li>
+                    <li><a href="<?= get_bloginfo('url');?>"><?php _e('Home',WEBMAG);?></a></li>
                 <?php
 
                     if(is_search()){

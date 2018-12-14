@@ -7,7 +7,7 @@ function webmag_setup() {
 	 * If you're building a theme based on Twenty Seventeen, use a find and replace
 	 * to change 'webmag' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'webmag' );
+	load_theme_textdomain( WEBMAG);
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -35,14 +35,12 @@ function webmag_setup() {
     add_image_size( 'webmag-post-banner-image', 1903, 269, true );
 
 
-
-
     // This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'    		=> __( 'Top Menu', DOMAIN ),
-		'social-aside' 	=> __( 'Social Aside Menu',DOMAIN),
-        'social-footer' => __( 'Social Footer Menu',DOMAIN),
-        'aside'    		=> __( 'Aside Menu',DOMAIN),
+		'top'    		=> __( 'Top Menu', WEBMAG ),
+		'social-aside' 	=> __( 'Social Aside Menu',WEBMAG),
+        'social-footer' => __( 'Social Footer Menu',WEBMAG),
+        'aside'    		=> __( 'Aside Menu',WEBMAG),
     ) );
 
 	/*
@@ -71,11 +69,8 @@ function webmag_setup() {
 		'audio',
 	) );
 
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
-
 
 }
 add_action( 'after_setup_theme', 'webmag_setup' );
@@ -89,7 +84,6 @@ function webmag_scripts() {
     // Add custom JS.
     wp_enqueue_script('webmag-script-jquery',ASSETS_PATH.'js/jquery.min.js',array(),null);
     wp_enqueue_script('webmag-script-bootstrap',ASSETS_PATH.'js/bootstrap.min.js',array(),null);
-    //wp_enqueue_script('webmag-script-main', ASSETS_PATH.'js/main.js',array(),null);
 
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style('webmag-fonts',ASSETS_PATH.'css/font-awesome.min.css',array(),null );

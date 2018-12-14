@@ -12,7 +12,7 @@
     <!-- post widget -->
     <div class="aside-widget">
         <div class="section-title">
-            <h2>Most Read</h2>
+            <h2><?php _e('Most Read',WEBMAG);?></h2>
         </div>
        <?php get_template_part('template-parts/right-widget/blocks/most-read')?>
     </div>
@@ -23,7 +23,7 @@
         <!-- post widget -->
         <div class="aside-widget">
             <div class="section-title">
-                <h2>Featured Posts</h2>
+                <h2><?php _e('Featured Posts',WEBMAG);?></h2>
             </div>
             <?php get_template_part('template-parts/right-widget/blocks/featured-posts');?>
          </div>
@@ -33,26 +33,33 @@
     <!-- /post widget -->
 
     <!-- catagories -->
+    <?php if(!is_page()): ?>
     <div class="aside-widget">
         <div class="section-title">
-            <h2>Catagories</h2>
+            <h2><?php _e('Catagories',WEBMAG);?></h2>
         </div>
         <?php get_template_part('template-parts/right-widget/blocks/categories');?>
     </div>
+    <?php endif;?>
     <!-- /catagories -->
 
     <!-- tags -->
+    <?php if(!is_page()): ?>
     <div class="aside-widget">
         <?php get_template_part('template-parts/right-widget/blocks/tags');?>
     </div>
+    <?php endif;?>
     <!-- /tags -->
 
     <!-- archive -->
+    <?php if(!is_page()): ?>
     <div class="aside-widget">
         <div class="section-title">
-            <h2>Archive</h2>
+            <h2><?php _e('Archive',WEBMAG);?></h2>
         </div>
         <?php get_template_part('template-parts/right-widget/blocks/archive');?>
     </div>
+    <?php endif;?>
+
     <!-- /archive -->
 </div>

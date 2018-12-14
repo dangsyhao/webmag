@@ -57,16 +57,16 @@
         <!-- Aside Nav -->
     </div>
     <!-- /Nav -->
-    <!-- page-header -->
-    <?php if(is_single()):?>
-        <?php get_template_part('template-parts/header/page-header') ?>
-    <?php endif;?>
-    <!-- page-header -->
+        <!-- page-header -->
+        <?php if(is_single()):?>
+            <?php get_template_part('template-parts/header/page-header') ?>
+        <?php endif;?>
+        <!-- page-header -->
 
-    <!-- beadcrumb -->
-    <?php if(!is_front_page() && !is_single()):?>
-        <?php get_template_part('template-parts/header/beadcrumb') ?>
-    <?php endif;?>
-    <!-- /beadcrumb -->
+        <!-- beadcrumb -->
+        <?php if(!is_front_page() && !is_single()):?>
+            <?php get_template_part('template-parts/header/beadcrumb') ?>
+        <?php endif;?>
+        <!-- /beadcrumb -->
 
 </header>

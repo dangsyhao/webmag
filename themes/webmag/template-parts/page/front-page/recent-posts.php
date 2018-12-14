@@ -13,7 +13,7 @@
         <div class="row recent-posts-first">
             <div class="col-md-12">
                 <div class="section-title">
-                    <h2>Recent Posts</h2>
+                    <h2><?php _e('Recent Posts',WEBMAG);?></h2>
                 </div>
             </div>
             <?php get_template_part('template-parts/page/front-page/blocks/recent-posts/recent-posts-first')?>

@@ -12,7 +12,7 @@
 
     <!-- widget posts -->
     <div class="section-row">
-        <h3>Recent Posts</h3>
+        <h3><?php _e('Recent Posts',WEBMAG);?></h3>
         <?php
         $args = array(
             'post_type'         => 'post',
@@ -41,7 +41,7 @@
 
     <!-- social links -->
     <div class="section-row">
-        <h3>Follow us</h3>
+        <h3><?php _e('Follow us',WEBMAG);?></h3>
 
         <?php
             wp_nav_menu( array(

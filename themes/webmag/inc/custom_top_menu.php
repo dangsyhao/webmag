@@ -21,7 +21,7 @@ class custom_top_menu extends Walker_Nav_Menu {
 
     public $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
 
-    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+    public function start_lvl( &$output,$depth = 0, $args = array() ) {
         if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
             $t = '';
             $n = '';
@@ -63,9 +63,15 @@ class custom_top_menu extends Walker_Nav_Menu {
         }
         $indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
-        //$classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] =$item->classes[0];
+        if($item->type_label=='Category'){
 
+            $classes[] ="cate-".$item->object_id;
+
+        }else{
+            $classes[] =$item->classes[0];
+
+        }
         $args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
@@ -98,11 +104,12 @@ class custom_top_menu extends Walker_Nav_Menu {
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
         $item_output = $args->before;
+
         $item_output .= '<a'. $attributes .'>';
+
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
-
 
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }

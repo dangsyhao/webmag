@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-<?php echo "This is Index Page !"; ?>
 
-
+<?php echo "Index Pages !"?>
 
 <?php get_footer();

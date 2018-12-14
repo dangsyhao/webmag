@@ -4,8 +4,10 @@
         <a class="post-img" href="<?php the_permalink()?>"><img src="<?= get_the_post_thumbnail_url($post->ID);?>" alt=""></a>
         <div class="post-body">
             <div class="post-meta">
-                <?php $cate_obj=get_the_category();?>
-                <a class="post-category cat-2" href="<?= get_category_link($cate_obj[0]->cat_ID)?>"><?= get_cat_name($cate_obj[0]->cat_ID)?></a>
+                <?php $cat_obj=get_the_category($post->ID);?>
+                <?php $cat_id=$cat_obj[0]->cat_ID;?>
+                <?php $color=get_field('cat_color',"category_".$cat_id);?>
+                <a class="post-category " style="background-color:<?= $color;?>; " href="<?= get_category_link($cat_id)?>"><?= get_cat_name($cat_id)?></a>
                 <span class="post-date"><?php the_date()?></span>
             </div>
             <h3 class="post-title"><a href="<?php the_permalink()?>"><?php the_title()?></a></h3>
