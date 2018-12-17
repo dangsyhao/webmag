@@ -118,6 +118,7 @@ require get_parent_theme_file_path( '/inc/custom_top_menu.php' );
 
 require get_parent_theme_file_path( '/inc/custom_social_menu.php' );
 
+require get_parent_theme_file_path( '/inc/webmag_list_comment_walker.php' );
 
 
 
